@@ -1,1 +1,28 @@
-<p>customer-model works!</p>
+<div class="container-fluid">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Country</th>
+                <th scope="col">PinCode</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customerData">
+                <td>{{customer.id}}</td>
+                <td>{{customer.name}}</td>
+                <td>{{customer.phone}}</td>
+                <td>{{customer.email}}</td>
+                <td>{{customer.address[0].city}}</td>
+                <td>{{customer.address[0].state}}</td>
+                <td>{{customer.address[0].country}}</td>
+                <td>{{customer.address[0].pincode}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
