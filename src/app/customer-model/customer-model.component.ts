@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { CustomerServiceService } from '../customer-service/customer-service.service';
+import { Customer } from './customer';
+import { Image } from './Image';
 
 @Component({
   selector: 'app-customer-model',
@@ -7,10 +9,11 @@ import { CustomerServiceService } from '../customer-service/customer-service.ser
   styleUrls: ['./customer-model.component.css'],
 })
 export class CustomerModelComponent {
-  customerData: any;
-  constructor(private cusomerService: CustomerServiceService) {
-    cusomerService.getAllCustomerData().subscribe((incomingData) => {
-      this.customerData = incomingData;
+  userResponse!: Customer[];
+
+  constructor(private customerService: CustomerServiceService) {
+    customerService.getAllCustomerData().subscribe((response: Customer[]) => {
+      this.userResponse = response;
     });
   }
 }
