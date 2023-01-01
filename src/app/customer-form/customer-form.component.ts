@@ -9,14 +9,12 @@ import { CustomerServiceService } from '../customer-service/customer-service.ser
 })
 export class CustomerFormComponent {
   constructor(private customerService: CustomerServiceService) {}
-  file: any;
-
+  file!: any;
+  url = '';
   onSelectFile(event: any) {
-    const fileReader = new FileReader();
-    fileReader.readAsDataURL(event);
-    this.file = fileReader.result;
-    console.log(this.file);
+    this.file = event.target.files[0];
   }
+
   getDataFromForm(data: Customer) {
     let form = new FormData();
     form.append('name', data.name);

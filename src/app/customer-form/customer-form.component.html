@@ -7,6 +7,7 @@
         </div>
         <div>
             <label for="formFile" class="form-label">Choose Profile Photo</label><br />
+            <img [src]="url" title="Image" height="120px" width="120px" />
             <input class="form-control" (change)="onSelectFile($event)" type="file" id="formFile"><br /><br />
         </div>
         <input class="form-control" ngModel type="submit" value="Submit" /><br /><br />
