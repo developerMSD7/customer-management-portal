@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Customer } from '../customer-model/customer';
 
 @Injectable({
@@ -14,9 +14,8 @@ export class CustomerServiceService {
   }
 
   saveNewData(data: any) {
-
-    return this.httpRequest.post<any>('http://localhost:8080/save', data);
-
-    
+    return this.httpRequest
+      .post<any>('http://localhost:8080/save', data);
+  
   }
 }
