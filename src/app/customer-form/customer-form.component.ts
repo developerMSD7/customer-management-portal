@@ -19,7 +19,7 @@ export class CustomerFormComponent {
    var x= new FileReader();
    x.readAsDataURL(this.file);
     let form = new FormData();
-    form.append('name', data.name);
+
     form.append('image.profilePhoto', this.file);
     this.customerService.saveNewData(form).subscribe();
   }
