@@ -14,6 +14,9 @@ export class CustomerServiceService {
   }
 
   saveNewData(data: any) {
+
     return this.httpRequest.post<any>('http://localhost:8080/save', data);
+
+    
   }
 }
