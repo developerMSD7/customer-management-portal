@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Observable, ReplaySubject } from 'rxjs';
 import { Customer } from '../customer-model/customer';
 import { CustomerServiceService } from '../customer-service/customer-service.service';
 
@@ -11,20 +10,20 @@ import { CustomerServiceService } from '../customer-service/customer-service.ser
 export class CustomerFormComponent {
   constructor(private customerService: CustomerServiceService) {}
   file!: any;
-  url = '';
+  rawfile!: any;
   onSelectFile(event: any) {
     const file = event.target.files[0];
-    this.url = URL.createObjectURL(file);
     const reader = new FileReader();
+    this.rawfile = file;
     reader.readAsDataURL(file);
     reader.onload = () => {
       this.file = reader.result;
-      console.log(reader.result);
     };
   }
 
-  getDataFromForm(data: Customer) {
+  getDataFromForm(data: any) {
     let form = new FormData();
+    form.append('img', this.rawfile);
     form.append('name', data.name);
     form.append('image.profilePhoto', this.file);
     this.customerService.saveNewData(form).subscribe();

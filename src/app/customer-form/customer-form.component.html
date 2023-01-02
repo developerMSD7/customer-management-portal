@@ -5,10 +5,27 @@
             <input class="form-control" ngModel type="text" id="name" name="name"
                 placeholder="Enter Your Full Name" /><br />
         </div>
-        <div>
+        <div class="row">
             <label for="formFile" class="form-label">Choose Profile Photo</label><br />
-            <img [src]="url" title="Image" height="120px" width="120px" />
-            <input class="form-control" (change)="onSelectFile($event)" type="file" id="formFile"><br /><br />
+            <div class="col-4 align-self-center">
+                <img [src]=" file || './assets/img/avatar.png'" title="Image" height="125px"
+                    width="125px" />
+                <br /><br />
+            </div>
+            <div class="col-8 align-self-start">
+
+                <input class="form-control" (change)="onSelectFile($event)" type="file" id="formFile"><br /><br />
+            </div>
+        </div>
+
+
+
+
+
+
+
+        <div>
+
         </div>
         <input class="form-control" ngModel type="submit" value="Submit" /><br /><br />
     </form>

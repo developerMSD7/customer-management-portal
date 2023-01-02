@@ -14,7 +14,7 @@
 					<tr *ngFor="let userResponse of userResponse">
 
 						<td>{{ userResponse.id }}</td>
-						<td class="w-25"><img src="{{userResponse.image.profilePhoto}}"
+						<td class="w-25"><img src="data:image/png;base64,{{userResponse.image.profilePhoto}}"
 								class="img-fluid img-thumbnail" /></td>
 						<td>{{ userResponse.name }}</td>
 						<td>{{ userResponse.image.id }}</td>
