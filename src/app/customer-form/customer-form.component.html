@@ -7,25 +7,17 @@
         </div>
         <div class="row">
             <label for="formFile" class="form-label">Choose Profile Photo</label><br />
-            <div class="col-4 align-self-center">
-                <img [src]=" file || './assets/img/avatar.png'" title="Image" height="125px"
-                    width="125px" />
+            <div class="col-md-4 align-self-center">
+                <img [src]=" file || './assets/img/avatar.png'" title="Image" height="125px" width="125px" />
                 <br /><br />
             </div>
-            <div class="col-8 align-self-start">
+            <div class="col-md-8 align-self-start">
+                <input class="form-control" (change)="onSelectFile($event)" type="file" id="formFile"><br />
+                <mat-progress-bar mode="determinate" value="file"></mat-progress-bar><br /><br />
 
-                <input class="form-control" (change)="onSelectFile($event)" type="file" id="formFile"><br /><br />
             </div>
         </div>
-
-
-
-
-
-
-
         <div>
-
         </div>
         <input class="form-control" ngModel type="submit" value="Submit" /><br /><br />
     </form>
