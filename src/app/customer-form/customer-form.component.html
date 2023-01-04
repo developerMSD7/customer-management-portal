@@ -2,7 +2,7 @@
     <form #usersForm="ngForm" (ngSubmit)="getDataFromForm(usersForm.value)">
         <div>
             <label for="name" class="form-label">Full Name:</label><br />
-            <input class="form-control" [(ngModel)]="name" type="text" id="name" name="name"
+            <input class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" type="text" id="name"
                 placeholder="Enter Your Full Name" /><br />
         </div>
         <div class="row">
@@ -18,6 +18,6 @@
         </div>
         <div>
         </div>
-        <input class="form-control" ngModel type="submit" value="Submit" /><br /><br />
+        <input class="form-control" type="submit" value="Submit" /><br /><br />
     </form>
 </div>

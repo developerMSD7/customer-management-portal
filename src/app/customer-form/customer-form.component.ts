@@ -10,6 +10,7 @@ import { NgForm } from '@angular/forms';
 })
 export class CustomerFormComponent {
 name: any;
+customer!: Customer;
   constructor(private customerService: CustomerServiceService) {}
   file!: any;
   rawfile!: any;

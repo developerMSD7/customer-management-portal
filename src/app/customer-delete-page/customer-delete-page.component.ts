@@ -8,10 +8,10 @@ import { CustomerServiceService } from '../customer-service/customer-service.ser
 })
 export class CustomerDeletePageComponent {
   deleteResponse!: string;
-  employeeId: any;
+
   constructor(private customerService: CustomerServiceService) {}
-  deleteData(id: any) {
-    this.customerService.deleteById(id.employeeId).subscribe((x: any) => {
+  deleteData(response: any) {
+    this.customerService.deleteById(response.employeeId).subscribe((x: any) => {
       console.log(x);
       this.deleteResponse = x;
     });
