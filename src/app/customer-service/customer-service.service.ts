@@ -17,9 +17,9 @@ export class CustomerServiceService {
     return this.httpRequest.post<Customer>('http://localhost:8080/save', data);
   }
 
-  deleteById(id: number) {
+  deleteById(id: any) {
     return this.httpRequest.delete<string>(
-      'http://localhost:8080/deleteById' + id
+      'http://localhost:8080/deleteById/' + id
     );
   }
 }

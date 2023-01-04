@@ -9,6 +9,7 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./customer-form.component.css'],
 })
 export class CustomerFormComponent {
+name: any;
   constructor(private customerService: CustomerServiceService) {}
   file!: any;
   rawfile!: any;

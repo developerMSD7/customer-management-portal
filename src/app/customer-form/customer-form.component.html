@@ -2,7 +2,7 @@
     <form #usersForm="ngForm" (ngSubmit)="getDataFromForm(usersForm.value)">
         <div>
             <label for="name" class="form-label">Full Name:</label><br />
-            <input class="form-control" ngModel type="text" id="name" name="name"
+            <input class="form-control" [(ngModel)]="name" type="text" id="name" name="name"
                 placeholder="Enter Your Full Name" /><br />
         </div>
         <div class="row">

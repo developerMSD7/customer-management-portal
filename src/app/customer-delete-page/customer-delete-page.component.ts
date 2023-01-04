@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
 import { CustomerServiceService } from '../customer-service/customer-service.service';
 
 @Component({
@@ -8,18 +7,13 @@ import { CustomerServiceService } from '../customer-service/customer-service.ser
   styleUrls: ['./customer-delete-page.component.css'],
 })
 export class CustomerDeletePageComponent {
-  id!: any;
   deleteResponse!: string;
-
+  employeeId: any;
+  constructor(private customerService: CustomerServiceService) {}
   deleteData(id: any) {
-    this.id = id;
-  }
-  constructor(customerService: CustomerServiceService) {
-    let formData = new FormData();
-    formData.append('id',this.id)
-    customerService.deleteById(this.id).subscribe((x) => {
-      this.deleteResponse = x;
+    this.customerService.deleteById(id.employeeId).subscribe((x: any) => {
       console.log(x);
+      this.deleteResponse = x;
     });
   }
 }
