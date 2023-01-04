@@ -8,15 +8,16 @@
 						<th scope="col">Profile</th>
 						<th scope="col">Name</th>
 						<th scope="col">Profile Id</th>
+						<th scope="col">Delete Data</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr *ngFor="let userResponse of userResponse">
 						<td>{{ userResponse.id }}</td>
-						<td class="w-25"><img src="data:image/png;base64,{{userResponse.image.profilePhoto}}"
-								class="img-fluid img-thumbnail" /></td>
+						<td class="w-25"><img src="data:image/png;base64,{{userResponse.image.profilePhoto}}" class="img-fluid img-thumbnail" /></td>
 						<td>{{ userResponse.name }}</td>
 						<td>{{ userResponse.image.id }}</td>
+						<!-- <td><div id="text" (click)="delete($userresponse.Id> your text here </div></td> -->
 					</tr>
 				</tbody>
 			</table>
