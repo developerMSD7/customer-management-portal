@@ -18,6 +18,8 @@ export class CustomerServiceService {
   }
 
   deleteById(id: number) {
-    this.httpRequest.delete<void>('http://localhost:8080/deleteById');
+    return this.httpRequest.delete<string>(
+      'http://localhost:8080/deleteById' + id
+    );
   }
 }

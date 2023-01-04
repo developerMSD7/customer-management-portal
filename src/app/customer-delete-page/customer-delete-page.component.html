@@ -1,0 +1,13 @@
+<div class="container center_div pt-5">
+    <form #usersForm="ngForm" (ngSubmit)="deleteData(usersForm.value)">
+        <div>
+            <label for="employeeId" class="form-label mx-auto">Id:</label><br />
+            <input class="form-control" ngModel type="text" id="employeeId" name="employeeId"
+                placeholder="Input Id of that record which you want to delete..."/><br />
+        </div>
+        <div>
+        </div>
+        <input class="form-control" ngModel type="submit" value="Delete" /><br /><br />
+    </form>
+    <p *ngIf="deleteResponse">{{deleteResponse}}</p>
+</div>
